@@ -1,2 +1,6 @@
-# csd-340
-This is my first repository
+
+#CSD 340 Web Development with HTML and CSS
+
+##Contributors
+  * Adam Bailey
+  * Vanessa Espino
