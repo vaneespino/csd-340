@@ -1,0 +1,76 @@
+<!--Vanessa Espino Module 9.3-->
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+	
+	<meta charset="UTF-8">
+	<meta name="description" content=“Assignment 9.3 CoWriter”>
+	<meta name="keywords" content=“hobbies, daughter, work”>
+	<meta name="robots” content=“nofollow”>
+	<meta name="author" content=“Vanessa Espino”>
+
+	<link rel=“stylesheet” href=“Espino_Mod29.3_2.css”>
+
+	 <title>CSD 340 Development with HTML and CSS</title>
+</head>
+<body>
+
+	<div id=“container”>
+		<h1>Assignment 9.3: JavaScript - Part 1</h1>
+		<h2>"The Road Not Taken" by Robert Frost</h2>
+	
+		<p class=“into”>
+		Two roads diverged in a yellow wood,
+		And sorry I could not travel both
+		<span id="line0">____</span>
+		And looked down one as far as I could
+		To where it bent in the undergrowth;
+		</p>
+		
+		<p>
+		Then took the other, as just as fair,
+		And having perhaps the better claim,
+		Because it was grassy and wanted wear;
+		<span id="line1">____</span>Though as for that the passing there
+		Had worn them really about the same,
+		</p>
+
+		<p>
+		And both that morning equally lay
+		In leaves no step had trodden black.
+		Oh, I kept the first for another day!
+		<span id="line1">_____</span>Yet knowing how way leads on to way,
+		I doubted if I should ever come back.
+		</p>
+		
+		<p>
+		I shall be telling this with a sigh
+		Somewhere ages and ages hence:
+		Two roads diverged in a wood, and I—
+		<span id="line1">_____</span>I took the one less traveled by,
+		And that has made all the difference.
+		</p>
+
+		<script>
+			const val1 = "JavaScript";
+			const val2 = "Variables";
+			const val3 = "DOM";
+			const val4 = "Manipulation";
+
+
+			function reveal(spanId, newValue) {
+				document.getElementById(spanId).innerText = newValue;
+			}
+
+		</script>
+
+		<hr />
+
+		<address>
+			<p>Bellevue University <a href=“https://www.bellevue.edu”>(Website)</a></p>
+			<p>1000 Galvin Road South</p>
+			<p>Bellevue, NE 68005</p>
+		</address>
+	</div>
+</body>
+</html>
