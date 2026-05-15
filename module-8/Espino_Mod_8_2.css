@@ -1,0 +1,134 @@
+header {
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    font-weight: 400;
+}
+
+
+h1 {
+    font-weight: 400;
+}
+
+
+#navbar {
+    overflow: hidden;
+    background-color: #333;
+    border-bottom: solid 15px #555;
+}
+
+
+#navbar a {
+    float: left;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+#navbar a:hover {
+    background-color: #555;
+    color: #fff;
+}
+
+
+#container {
+    margin-top: 2%;
+    margin-left: 5%;
+    margin-right: 5%;
+    padding: 100px;
+}
+
+
+.card {
+    border: 1px solid #ccc;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    transition: 0.3s;
+    padding: 10px;
+    margin-bottom: 20px;
+    width: 50%;
+    background-color: #fff;
+}
+
+
+.card-title {
+    text-align: center;
+    font-size: 1.5em;
+    color: #333;
+    font-weight: bold;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
+    margin-bottom: 10px;
+}
+
+
+.card-content {
+    padding: 5px;
+}
+
+.card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+table {
+	border-collapse: collapse;
+	width: 100%;
+	margin-bottom: 30px;
+}
+
+th, td {
+	border: 1px solid black;
+	padding: 10px;
+	text-align: left;
+}
+
+th {
+	background-color: #f2f2f2;
+}
+
+body {
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+	margin: 0;
+
+footer {
+    background-color: #333;
+    text-align: left;
+    bottom: 0;
+    width: 100%;
+    position: fixed;
+    left: 0;
+    margin: 0;
+    
+    
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 10px;
+}
+
+
+footer p {
+    color: white;
+    font-weight: 400;
+    float: right;
+    padding-right: 5px 10px;
+    font-style: italic;
+    margin: 0;
+    font-size: 14px;
+}
+
+
+footer a {
+    text-decoration: none;
+    color: white;
+}
+
+
+footer a:hover {
+    text-decoration: underline;
+}
