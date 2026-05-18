@@ -1,0 +1,68 @@
+<!--Vanessa Espino Module 10.3-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSD 340 Web Development with HTML and CSS</title>
+    <link rel='stylesheet' type='text/css' href='body1.css' />
+
+    <style>
+        body { text-align: center; font-family: sans-serif; padding-top: 50px; }
+        #myPhoto { width: 300px; cursor: pointer; border: 5px solid #333; border-radius: 15px;}
+        .container { margin-top: 20px; }
+        .hover-box { cursor: pointer; margin: 15px 0; }
+        .hover-box img { width: 300px; border: 0; }
+    </style>
+
+    <script>
+        function toggleImage() {
+            var img = document.getElementById('myPhoto');
+            // Check if the current source contains "Sea-view1"
+            if (img.src.match("Sea-view1")) {
+                img.src = "Sea-view2.jpg";
+            } else {
+                img.src = "Sea-view1.jpg";
+            }
+        }
+    </script>
+</head>
+<body>
+
+    <h1>Assignment 10.3: JavaScript - Part 2</h1>
+    
+    <div class="container">
+        <p>Click the image to change the environment!</p>
+        <!-- Clickable image utilizing the onclick MouseEvent -->
+        <img id="myPhoto" src="Sea-view1.jpg" alt="View of the Sea" onclick="toggleImage()">
+    </div>
+
+    <hr />
+
+    <div class="hover-box">
+        <img id="Sea-view-hover" src="Sea-view2.jpg" alt="Sea view"
+             onmouseover="this.src='Sea-view1.jpg';"
+             onmouseout="this.src='Sea-view2.jpg';">
+    </div>
+    
+    <div onmouseover="this.style.color='red';" onmouseout="this.style.color='black';">
+        Run your mouse over the image to change.
+    </div>
+    
+    <br />
+    
+    <div>
+        <img id="moon" src="Sea-view2.jpg" alt="Sea view 2"
+             onmouseover="this.src='Sea-view3.jpg';"
+             onmouseout="this.src='Sea-view4.jpg';">
+    </div>
+    
+    <br />
+    
+    <div onmouseover="this.style.color='blue';" onmouseout="this.style.color='grey';">
+        Run your mouse over the image to change.
+        <br />
+        Right-click and select View Source for more details.
+    </div>
+
+</body>
+</html>
