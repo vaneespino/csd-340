@@ -1,0 +1,145 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>CSD 340 Web Development with HTML and CSS</title>
+	<style>
+		body { font-family: sans-serif; margin: 20px; }
+		.controls { margin-bottom: 20px; }
+		#display-area {margin-top: 20px; border-top: 1px solid #ccc; padding-top: 10px; }
+		ol { list-style-type: decimal; }
+		select, input, button { margin-right: 5px; padding: 5px; }
+	</style>
+</head>
+<body> 
+
+
+	<h1>Assignment 11.2: JavaScript - Part 3</h1>
+
+
+	<div id="display-area">
+		<h3>Enter a task below and click Add to add to list. Click Delete Last Entry to remove last entered item. Click Delete Selected Item to delete item selected in drop down. Click Sort to sort items in list. </h3>
+		<ol id="displayList"></ol>
+
+</div>
+
+<div class="controls">
+		<input type="text" id="taskInput" placeholder="Enter a task...">
+		<button onclick="addItem()">Add</button>
+		<button onclick="deleteLast()">Delete Last Entry</button>
+
+		<select id="taskSelect">
+			<option value="">-- Select an Item --</option>
+		</select>
+		<button onclick="deleteSelected()">Delete Selected Item</button>
+		<button onclick="sortItems()">Sort</button>
+
+	</div>
+
+
+	
+	<script>
+		//Initialize the array
+		let tasks = [];
+
+		function displayTasks() {
+			const listElement = document.getElementById("displayList");
+			const selectElement = document.getElementById("taskSelect");
+			
+			listElement.innerHTML = "";
+			selectElement.innerHTML = '<option value="">-- Select an Item --</option>';
+
+			tasks.forEach((task, index) => {
+				let li = document.createElement("li");
+				li.textContent = task;
+				listElement.appendChild(li);
+
+				let option = document.createElement("option");
+				option.value = index;
+				option.textContent = (index + 1) + ". " + task;
+				selectElement.appendChild(option);
+			});
+		}
+
+
+		function addItem() {
+			const input = document.getElementById('taskInput');
+			const value = input.value.trim();
+
+
+			if (value !== "") {
+				tasks.push(value);
+				alert("Added: " + value);
+				input.value = "";
+				displayTasks();
+			} else {
+				alert("Please enter something first");
+			}
+		}
+
+
+		function deleteLast() {
+			if (tasks.length > 0){
+				const removed = tasks.pop();
+				alert("Deleted: " + removed);
+				displayTasks();
+			} else {
+				alert("Nothing left to delete");
+			}
+		}
+
+		function deleteSelected() {
+			if (tasks.length === 0) {
+				alert("Nothing left to delete");
+				return;
+			}
+
+			const selectElement = document.getElementById("taskSelect");
+			const selectedIndexValue = selectElement.value;
+
+			if (selectedIndexValue === "") {
+				alert("Please select an item from the drop-down menu first.");
+				return;
+			}
+			
+
+			let index = parseInt(selectedIndexValue, 10);
+
+
+			if (!isNaN(index) && index >= 0 && index < tasks.length) {
+
+				let removed = tasks.splice(index, 1);
+				alert("Deleted: " + removed[0]);
+				displayTasks();
+			} else if (input !== null) {
+				alert("Invalid item number.");
+			}
+		}
+
+		function sortItems() {
+			if (tasks.length > 1) {
+				tasks.sort()
+				alert("The list has been sorted alphabetically.");
+				displayTasks();
+			} else {
+				alert("Not enough items to sort.");
+			}
+		}
+
+		function displayContents() {
+			const listElement = document.getElementById('displayList');
+			listElement.innerHTML = "";
+
+
+			tasks.forEach(function(item) {
+				let li = document.createElement('li');
+				li.textContent = item;
+				listElement.appendChild(li);
+			});
+		}
+	</script>
+
+</body>
+</html>
